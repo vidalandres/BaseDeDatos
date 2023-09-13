@@ -1,0 +1,151 @@
+//CREACION DE BD
+CREATE DATABASE Practica2;
+QUERY OK
+______________________________
+
+//USAR LA BD Practica2
+ USE Practica2;
+Database changed
+______________________________
+
+//CREAR TABLA Cervezas
+ CREATE TABLE Cervezas(ID INT PRIMARY KEY AUTO_INCREMENT,
+    ->  Nombre VARCHAR(150) NOT NULL,
+    -> Fecha_Fabricacion DATE NOT NULL,
+    -> Fecha_Vencimiento DATE NOT NULL
+    -> );
+Query OK, 0 rows affected (0.02 sec)
+
+ DESCRIBE Cervezas;
++-------------------+--------------+------+-----+---------+----------------+
+| Field             | Type         | Null | Key | Default | Extra          |
++-------------------+--------------+------+-----+---------+----------------+
+| ID                | int          | NO   | PRI | NULL    | auto_increment |
+| Nombre            | varchar(150) | NO   |     | NULL    |                |
+| Fecha_Fabricacion | date         | NO   |     | NULL    |                |
+| Fecha_Vencimiento | date         | NO   |     | NULL    |                |
++-------------------+--------------+------+-----+---------+----------------+
+4 rows in set (0.01 sec)
+_____________________________________________________________
+//CREAR TABLA MateriaPrima
+ CREATE TABLE MateriaPrima(ID INT PRIMARY KEY AUTO_INCREMENT,
+    ->  Conservante VARCHAR(150) NOT NULL,
+    -> Cantidad INT NOT NULL,
+    -> Adjuntos VARCHAR(150) NOT NULL,
+    ->  Insumos VARCHAR(150) NOT NULL
+    -> );
+Query OK, 0 rows affected (0.03 sec)
+
+ DESCRIBE MateriaPrima;
++-------------+--------------+------+-----+---------+----------------+
+| Field       | Type         | Null | Key | Default | Extra          |
++-------------+--------------+------+-----+---------+----------------+
+| ID          | int          | NO   | PRI | NULL    | auto_increment |
+| Conservante | varchar(150) | NO   |     | NULL    |                |
+| Cantidad    | int          | NO   |     | NULL    |                |
+| Adjuntos    | varchar(150) | NO   |     | NULL    |                |
+| Insumos     | varchar(150) | NO   |     | NULL    |                |
++-------------+--------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+____________________________________________________________
+//CREAR TABLA Categorias
+  CREATE TABLE Categorias(ID INT PRIMARY KEY AUTO_INCREMENT,
+    -> Nombre VARCHAR(150) NOT NULL
+    -> );
+Query OK, 0 rows affected (0.01 sec)
+
+DESCRIBE Categorias;
++--------+--------------+------+-----+---------+----------------+
+| Field  | Type         | Null | Key | Default | Extra          |
++--------+--------------+------+-----+---------+----------------+
+| ID     | int          | NO   | PRI | NULL    | auto_increment |
+| Nombre | varchar(150) | NO   |     | NULL    |                |
++--------+--------------+------+-----+---------+----------------+
+2 rows in set (0.00 sec)
+________________________________________________________________
+//CREAR TABLA TiposCategorias
+ CREATE TABLE TiposCategorias(ID INT PRIMARY KEY AUTO_INCREMENT,
+    -> Nombre VARCHAR(150) NOT NULL
+    -> );
+Query OK, 0 rows affected (0.02 sec)
+
+DESCRIBE TiposCategorias;
++--------+--------------+------+-----+---------+----------------+
+| Field  | Type         | Null | Key | Default | Extra          |
++--------+--------------+------+-----+---------+----------------+
+| ID     | int          | NO   | PRI | NULL    | auto_increment |
+| Nombre | varchar(150) | NO   |     | NULL    |                |
++--------+--------------+------+-----+---------+----------------+
+2 rows in set (0.00 sec)
+_____________________________________________________________________
+//CREAR TABLA INTERMEDIA   Cervezas_MateriaPrima
+  CREATE TABLE Cervezas_MateriaPrima(ID INT AUTO_INCREMENT PRIMARY KEY,
+    ->  ID_MateriaPrima INT,
+    -> ID_Cervezas INT,
+    -> FOREIGN KEY (ID_Cervezas) REFERENCES Cervezas(ID),
+    -> FOREIGN KEY (ID_MateriaPrima) REFERENCES MateriaPrima(ID)
+    -> );
+Query OK, 0 rows affected (0.06 sec)
+
+DESCRIBE Cervezas_MateriaPrima;
++-----------------+------+------+-----+---------+----------------+
+| Field           | Type | Null | Key | Default | Extra          |
++-----------------+------+------+-----+---------+----------------+
+| ID              | int  | NO   | PRI | NULL    | auto_increment |
+| ID_MateriaPrima | int  | YES  | MUL | NULL    |                |
+| ID_Cervezas     | int  | YES  | MUL | NULL    |                |
++-----------------+------+------+-----+---------+----------------+
+3 rows in set (0.00 sec)
+__________________________________________________________________
+//CREAR INTERMEDIA TiposCategorias_Categorias
+ CREATE TABLE TiposCategorias_Categorias(ID INT AUTO_INCREMENT PRIMARY KEY,
+    -> ID_TiposCategorias INT,
+    -> ID_Categorias INT,
+    -> FOREIGN KEY (ID_TiposCategorias) REFERENCES TiposCategorias(ID),
+    -> FOREIGN KEY (ID_Categorias) REFERENCES Categorias(ID)
+    -> );
+Query OK, 0 rows affected (0.04 sec)
+
+DESCRIBE TiposCategorias_Categorias;
++--------------------+------+------+-----+---------+----------------+
+| Field              | Type | Null | Key | Default | Extra          |
++--------------------+------+------+-----+---------+----------------+
+| ID                 | int  | NO   | PRI | NULL    | auto_increment |
+| ID_TiposCategorias | int  | YES  | MUL | NULL    |                |
+| ID_Categorias      | int  | YES  | MUL | NULL    |                |
++--------------------+------+------+-----+---------+----------------+
+3 rows in set (0.00 sec)
+
+___________________________________________________________________
+//VERIFICAR CAMPO ID_Categorias ADICIONADO EN TABLA Cervezas
+
+ ALTER TABLE Cervezas ADD COLUMN ID_Categorias INT;
+ DESCRIBE Cervezas;
++-------------------+--------------+------+-----+---------+----------------+
+| Field             | Type         | Null | Key | Default | Extra          |
++-------------------+--------------+------+-----+---------+----------------+
+| ID                | int          | NO   | PRI | NULL    | auto_increment |
+| Nombre            | varchar(150) | NO   |     | NULL    |                |
+| Fecha_Fabricacion | date         | NO   |     | NULL    |                |
+| Fecha_Vencimiento | date         | NO   |     | NULL    |                |
+| ID_Categorias     | int          | YES  |     | NULL    |                |
++-------------------+--------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+//
+ADICIONAR FOREIGN KEY ID_Categorias A LA TABLA Cervezas
+
+ALTER TABLE Cervezas ADD FOREIGN KEY (ID_Categorias) REFERENCES Categorias(ID);
+ DESCRIBE Cervezas;
++-------------------+--------------+------+-----+---------+----------------+
+| Field             | Type         | Null | Key | Default | Extra          |
++-------------------+--------------+------+-----+---------+----------------+
+| ID                | int          | NO   | PRI | NULL    | auto_increment |
+| Nombre            | varchar(150) | NO   |     | NULL    |                |
+| Fecha_Fabricacion | date         | NO   |     | NULL    |                |
+| Fecha_Vencimiento | date         | NO   |     | NULL    |                |
+| ID_Categorias     | int          | YES  | MUL | NULL    |                |
++-------------------+--------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+Query OK, 0 rows affected (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
