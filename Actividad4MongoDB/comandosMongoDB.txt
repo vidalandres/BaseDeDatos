@@ -1,0 +1,291 @@
+cervezas 
+______________________________
+{
+  "_id": 1,
+  "nombre": "lagers",
+  "cantidad": 100,
+  "materiaprima": {
+    "_id": 1,
+    "ingredientes": "cebada",
+    "cantidad": 2500
+  },
+  "tipocategoria": [
+    {
+      "_id": 1,
+      "nombre": "poker",
+      "cantidad": 25
+    },
+    {
+      "_id": 2,
+      "nombre": "aguila",
+      "cantidad": 25
+    },
+    {
+      "_id": 3,
+      "nombre": "andina",
+      "cantidad": 25
+    },
+    {
+      "_id": 4,
+      "nombre": "redd's",
+      "cantidad": 25
+    }
+  ]
+}
+________________________________
+{
+  "_id": 2,
+  "nombre": "ales",
+  "cantidad": 100,
+  "precio": 12.5,
+  "materiaprima": [
+    {
+      "_id": 2,
+      "ingredientes": "agua",
+      "cantidad": 2500
+    },
+    {
+      "_id": 1,
+      "ingredientes": "cebada",
+      "cantidad": 2500
+    }
+  ],
+  "tipocategoria": [
+    {
+      "_id": 5,
+      "nombre": "budweiser",
+      "cantidad": 25
+    },
+    {
+      "_id": 6,
+      "nombre": "aguilalithg",
+      "cantidad": 25
+    },
+    {
+      "_id": 7,
+      "nombre": "stela ",
+      "cantidad": 25
+    },
+    {
+      "_id": 8,
+      "nombre": "like",
+      "cantidad": 25
+    }
+  ]
+}
+_____________________________________
+{
+  "_id": 3,
+  "nombre": "pilsen",
+  "cantidad": 100,
+  "precio": 12,
+  "materiaprima": [
+    {
+      "_id": 2,
+      "ingredientes": "agua",
+      "cantidad": 2500
+    },
+    {
+      "_id": 1,
+      "ingredientes": "cebada",
+      "cantidad": 2500
+    }
+  ],
+  "tipocategoria": [
+    {
+      "_id": 9,
+      "nombre": "pokersita",
+      "cantidad": 25
+    },
+    {
+      "_id": 10,
+      "nombre": "aguilita",
+      "cantidad": 25
+    },
+    {
+      "_id": 11,
+      "nombre": "andinajumbo",
+      "cantidad": 25
+    },
+    {
+      "_id": 12,
+      "nombre": "bush lithg",
+      "cantidad": 25
+    }
+  ]
+}
+___________________________________
+materiaprima
+{
+  "_id": 1,
+  "ingredientes": "cebada",
+  "cantidad": 10000
+}
+______________________________
+{
+  "_id": 2,
+  "ingredientes": "agua",
+  "cantidad": 10000
+}
+_________________________
+{
+  "_id": 3,
+  "ingredientes": "lupulo",
+  "cantidad": 10000
+}
+__________________
+produccion
+{
+  "_id": 1,
+  "nombre": "lagers",
+  "cantidad": 100,
+  "materiaprima": {
+    "_id": 1,
+    "ingredientes": "cebada",
+    "cantidad": 2500
+  },
+  "tipocategoria": [
+    {
+      "_id": 1,
+      "nombre": "poker",
+      "cantidad": 25
+    },
+    {
+      "_id": 2,
+      "nombre": "aguila",
+      "cantidad": 25
+    },
+    {
+      "_id": 3,
+      "nombre": "andina",
+      "cantidad": 25
+    },
+    {
+      "_id": 4,
+      "nombre": "redd's",
+      "cantidad": 25
+    }
+  ]
+}
+__________________________
+{
+  "_id": 2,
+  "nombre": "ales",
+  "cantidad": 100,
+  "precio": 12.5,
+  "materiaprima": [
+    {
+      "_id": 2,
+      "ingredientes": "agua",
+      "cantidad": 2500
+    },
+    {
+      "_id": 1,
+      "ingredientes": "cebada",
+      "cantidad": 2500
+    }
+  ],
+  "tipocategoria": [
+    {
+      "_id": 5,
+      "nombre": "budweiser",
+      "cantidad": 25
+    },
+    {
+      "_id": 6,
+      "nombre": "aguilalithg",
+      "cantidad": 25
+    },
+    {
+      "_id": 7,
+      "nombre": "stela ",
+      "cantidad": 25
+    },
+    {
+      "_id": 8,
+      "nombre": "like",
+      "cantidad": 25
+    }
+  ]
+}
+________________________________
+{
+  "_id": 3,
+  "nombre": "pilsen",
+  "cantidad": 100,
+  "precio": 12,
+  "materiaprima": [
+    {
+      "_id": 2,
+      "ingredientes": "agua",
+      "cantidad": 2500
+    },
+    {
+      "_id": 1,
+      "ingredientes": "cebada",
+      "cantidad": 2500
+    }
+  ],
+  "tipocategoria": [
+    {
+      "_id": 9,
+      "nombre": "pokersita",
+      "cantidad": 25
+    },
+    {
+      "_id": 10,
+      "nombre": "aguilita",
+      "cantidad": 25
+    },
+    {
+      "_id": 11,
+      "nombre": "andinajumbo",
+      "cantidad": 25
+    },
+    {
+      "_id": 12,
+      "nombre": "bush lithg",
+      "cantidad": 25
+    }
+  ]
+}
+__________________________________
+ventas
+{
+  "_id": 1,
+  "fecha": "12/12/23",
+  "hora": "12:00:00",
+  "cervezas": {
+    "id": 3,
+    "nombre": "pilsen",
+    "cantidad": 10,
+    "precio": 12,
+    "valortotal": 120
+  }
+}
+_____________________________
+{
+  "_id": 2,
+  "fecha": "13/12/23",
+  "hora": "2:00:00",
+  "cervezas": {
+    "id": 2,
+    "nombre": "ales",
+    "cantidad": 10,
+    "precio": 12.5,
+    "valortotal": 125
+  }
+}
+_____________________________
+{
+  "_id": 3,
+  "fecha": "13/12/23",
+  "hora": "2:00:00",
+  "cervezas": {
+    "id": 1,
+    "nombre": "lagers",
+    "cantidad": 10,
+    "precio": 13.4,
+    "valortotal": 134
+  }
+}

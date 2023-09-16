@@ -1,0 +1,36 @@
+[{
+  "_id": 1,
+  "fecha": "12/12/23",
+  "hora": "12:00:00",
+  "cervezas": {
+    "id": 3,
+    "nombre": "pilsen",
+    "cantidad": 10,
+    "precio": 12,
+    "valortotal": 120
+  }
+},
+{
+  "_id": 2,
+  "fecha": "13/12/23",
+  "hora": "2:00:00",
+  "cervezas": {
+    "id": 2,
+    "nombre": "ales",
+    "cantidad": 10,
+    "precio": 12.5,
+    "valortotal": 125
+  }
+},
+{
+  "_id": 3,
+  "fecha": "13/12/23",
+  "hora": "2:00:00",
+  "cervezas": {
+    "id": 1,
+    "nombre": "lagers",
+    "cantidad": 10,
+    "precio": 13.4,
+    "valortotal": 134
+  }
+}]

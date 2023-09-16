@@ -1,0 +1,15 @@
+[{
+  "_id": 1,
+  "ingredientes": "cebada",
+  "cantidad": 10000
+},
+{
+  "_id": 2,
+  "ingredientes": "agua",
+  "cantidad": 10000
+},
+{
+  "_id": 3,
+  "ingredientes": "lupulo",
+  "cantidad": 10000
+}]
